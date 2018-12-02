@@ -1,2 +1,6 @@
-<app-childone (toggleEvent)="setToggle($event)" ></app-childone>
-<app-childtwo [toggleStatus]="toggle"></app-childtwo>
+<input type="text" name="search" [(ngModel)]="searchText">
+<div>
+    <ul *ngFor="let item of displayList;trackBy:identify | filter : searchText">
+        <app-list [data]="item"></app-list>    
+    </ul>
+</div>
